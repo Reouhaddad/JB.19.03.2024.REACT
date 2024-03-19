@@ -4,8 +4,8 @@ import { addProdAsync, deleteProdAsync, getProdsAsync, selectProds, updDataAsync
 import { selectlogged } from './loginSlice';
 export const Prod = () => {
 
-  // const MY_SERVER = "https://jb-17-03-2024-dj-1.onrender.com/static";
-  const MY_SERVER1 = "http://127.0.0.1:8000/static";
+  const MY_SERVER = "https://jb-17-03-2024-dj-1.onrender.com/static";
+  // const MY_SERVER1 = "http://127.0.0.1:8000/static";
   const prods = useSelector(selectProds);
   const logged = useSelector(selectlogged);
   const dispatch = useDispatch();
@@ -78,7 +78,7 @@ export const Prod = () => {
             <div key={prod.id} className="col-md-2 mb-4"> {/* Modifier la classe ici */}
               <div className="card" style={{ border: '1px solid black', borderRadius: '10px', padding: '10px' }}>
                 {prod.image ? (
-                  <img src={MY_SERVER1 + prod.image} className="card-img-top img-fluid" alt={prod.name} style={{ height: '150px', objectFit: 'cover' }} />
+                  <img src={MY_SERVER + prod.image} className="card-img-top img-fluid" alt={prod.name} style={{ height: '150px', objectFit: 'cover' }} />
                 ) : (
                   // Si aucune image n'est définie, utilisez une image par défaut
                   <img src="https://picsum.photos/200" className="card-img-top" alt="." style={{ maxWidth: "163px", maxHeight: "163px" }} />
@@ -89,7 +89,7 @@ export const Prod = () => {
                   <button className='btn btn-primary'>Buy</button>
                   <button className='btn btn-danger' onClick={() => handelDel(prod.id)}>Remove</button>
                 </div>
-                <img src={MY_SERVER1 + '/static/images/tranches-pain-ail-herbes_1mYqK2t'} className="card-img-top" alt="" />
+                <img src={MY_SERVER + '/static/images/tranches-pain-ail-herbes_1mYqK2t'} className="card-img-top" alt="" />
               </div>
               
             </div>))}
